@@ -1,3 +1,9 @@
 #R Project Related Files
+.Rproj.user
+tweetsfrombillgates.Rproj
+
+#R History File
 .Rhistory
-*.Rproj*
+
+#Generated HTML file
+billgatestwitterdata.Rmd
