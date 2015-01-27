@@ -1,0 +1,14 @@
+---
+title: "Tweets From Bill Gates"
+author: "Ashutosh Nanda"
+date: "Tuesday, January 27, 2015"
+output: html_document
+---
+
+##Introduction
+
+This short post covers getting data from Twitter and making a simple histogram visualization. The code relevant to this project can be found on [my Github](https://github.com/ashutoshnanda/tweetsfrombillgates).
+
+##Getting Twitter Data through twitteR
+
+There is a great package called `twitteR` that allows R to interact with the massive data store of Twitter.
