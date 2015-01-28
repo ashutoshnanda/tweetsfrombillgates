@@ -11,4 +11,32 @@ This short post covers getting data from Twitter and making a simple histogram v
 
 ##Getting Twitter Data through twitteR
 
-There is a great package called `twitteR` that allows R to interact with the massive data store of Twitter.
+There is a great package called `twitteR` that allows R to interact with the massive data store of Twitter. First, we need to authenticate our session; I have already done the authentication process using `ROAuth`, which I'll load here.
+
+```{r load-authentication}
+load('twitter_authentication.Rdata')
+```
+
+Now, we can start interacting with Twitter once we load the `twitteR` package and register the OAuth credentials to the R session.
+
+```{r load-register-twitter, message = FALSE, warning = FALSE}
+library('twitteR')
+registerTwitterOAuth(cred)
+```
+
+We can finally search for the tweets that @BillGates has sent out by using the following code:
+
+```{r get-tweets}
+tweets.from.billgates <- twListToDF(userTimeline('BillGates', n = 3200, 
+                                                 cainfo = 'cacert.pem'))
+nrow(tweets.from.billgates)
+```
+ 
+Cool, we have gathered 830 tweets from @BillGates! Here's a histogram of the favorite counts for his tweets:
+
+```{r favorite-count-hist}
+hist(tweets.from.billgates$favoriteCount, main = "Tweets by @BillGates", breaks = 25,
+     xlab = "Number of times tweet was favorited", ylab = "Count", col = "black")
+```
+
+Thanks for reading, and happy Twitter mining!
