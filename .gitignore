@@ -7,3 +7,7 @@ tweetsfrombillgates.Rproj
 
 #Generated HTML file
 billgatestwitterdata.html
+
+#OAuth Related Files
+cacert.pem
+twitter_authentication.Rdata
